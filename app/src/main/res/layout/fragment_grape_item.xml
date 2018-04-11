@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/li_grape_layout"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="3">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/li_grape_item_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/id_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintEnd_toStartOf="@id/content"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="@id/li_grape_item_layout"/>
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintEnd_toEndOf="@id/li_grape_item_layout"
+            app:layout_constraintStart_toEndOf="@id/id_text"/>
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/content"
+            app:layout_constraintEnd_toStartOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/li_grape_buttons_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/li_grape_button_remove"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="Supprimer"
+            android:src="@drawable/ic_list_button_remove"
+            app:layout_constraintEnd_toStartOf="@id/li_grape_button_add"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="@id/li_grape_buttons_layout"/>
+
+        <ImageButton
+            android:id="@+id/li_grape_button_add"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="Ajouter"
+            android:src="@drawable/ic_list_button_add"
+            app:layout_constraintEnd_toStartOf="@id/li_grape_buttons_layout"
+            app:layout_constraintStart_toEndOf="@id/li_grape_button_remove"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
